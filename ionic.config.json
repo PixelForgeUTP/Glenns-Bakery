@@ -1,0 +1,7 @@
+{
+  "name": "glenns-bakery-project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

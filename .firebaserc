@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "glennsbakery-c09d1": {
+      "hosting": {
+        "app": [
+          "glennsbakery-c09d1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "glennsbakery-c09d1"
+  }
+}
