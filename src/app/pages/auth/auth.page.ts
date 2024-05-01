@@ -1,31 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonItem, IonLabel, IonMenu, IonMenuButton, IonButtons, IonList, IonInput} from '@ionic/angular/standalone';
+import { IonContent, IonButton} from '@ionic/angular/standalone';
 
-import { CustomInputComponent } from "../components/custom-input/custom-input.component";
+import { CustomInputComponent } from "../../components/custom-input/custom-input.component";
+import { MenuComponent } from 'src/app/components/menu/menu.component';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.page.html',
   styleUrls: ['./auth.page.scss'],
   standalone: true,
-  imports: [IonInput, IonList, IonContent, 
-    IonHeader, 
-    IonTitle, 
-    IonToolbar, 
+  imports: [
+    IonButton,
+    IonContent,
     CommonModule, 
     FormsModule,
-    IonButtons,
-    IonMenuButton,
-    IonItem,
-    IonLabel,
-    IonMenu,
-    IonButton,
-    RouterLink,
     CustomInputComponent,
-    ReactiveFormsModule
+    RouterLink,
+    ReactiveFormsModule,
+    MenuComponent
   ]
 })
 export class AuthPage implements OnInit {
