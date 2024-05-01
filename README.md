@@ -22,3 +22,7 @@ Atributo: Uso del atributo dentro de la etiqueta [routerLink]="['/home']
 ## Barra de navegación
 ### Función:
 Proporciona acceso rápido a las secciones principales de la aplicación, como la página de inicio, el carrito de compras, el perfil del usuario y el historial de pedidos.
+## Home
+### Función: Muestra el contenido principal de la aplicacion.
+## Carrito de compras
+### Función: Muestra una lista de los productos que el usuario ha agregado, junto con sus cantidades y precios totales.
