@@ -19,7 +19,7 @@ Atributo: Uso del atributo dentro de la etiqueta [routerLink]="['/home']
 ![image](https://github.com/PixelForgeUTP/Glenns-Bakery/assets/93150198/337b8236-4cd0-470d-b1c3-18e09295e51d)
 
 # Glenn's Bakery Description
-App enfocada en la venta de productos de reposteria de gran variedad.
+App enfocada en la venta de productos de reposteria de gran variedad via delivery.
 ## Barra de navegación
 ### Función:
 Proporciona acceso rápido a las secciones principales de la aplicación, como la página de inicio, el carrito de compras, el perfil del usuario y el historial de pedidos.
