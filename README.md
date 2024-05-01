@@ -35,4 +35,7 @@ Proporciona acceso rápido a las secciones principales de la aplicación, como l
 ### Función: Los usuarios podran acceder a su historial de pedidos, direcciones registradas, sus cupones y otros servicios como el de soporte.
 ## Página de historial de pedidos
 ### Función: Muestra una lista de los pedidos anteriores del usuario, junto con los detalles de cada pedido, como el número de pedido, la fecha de pedido, el total del pedido y el estado del pedido.
-
+## Página de cupones
+### Función: El usuario podra ver los cupones que dispone.
+## Soporte
+### Función: Esta función permite a los usuarios abrir un ticket para establecer contacto con nuestro equipo de soporte. La comunicación se lleva a cabo a través de correo electrónico utilizando la plataforma Gmail.
