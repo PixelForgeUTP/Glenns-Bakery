@@ -4,8 +4,8 @@
 
 ## Descripcion de componentes
 ![image](https://github.com/PixelForgeUTP/Glenns-Bakery/assets/93150198/0cc64894-37da-4e15-b6b1-1277e9f3526c)
-- Pages:  Representará la experiencia visual y las funcionalidades con las que el usuario podrá interactuar.
-- Components: Seran los elementos modulares que encapsulan partes específicas de la interfaz de usuario y su lógica asociada. 
+- Pages:  representará la experiencia visual y las funcionalidades con las que el usuario podrá interactuar.
+- Components: seran los elementos modulares que encapsulan partes específicas de la interfaz de usuario y su lógica asociada. 
 - Services: clases reutilizables que proporcionan funcionalidades específicas a lo largo de la aplicación (lógica de negocio, el acceso a datos, la interacción con servidores externos ).
 
 ### Manejo de rutas
