@@ -20,4 +20,5 @@ Atributo: Uso del atributo dentro de la etiqueta [routerLink]="['/home']
 
 # Glenn's Bakery Description
 ## Barra de navegación
-### Función: : Proporciona acceso rápido a las secciones principales de la aplicación, como la página de inicio, el carrito de compras, el perfil del usuario y el historial de pedidos.
+### Función:
+Proporciona acceso rápido a las secciones principales de la aplicación, como la página de inicio, el carrito de compras, el perfil del usuario y el historial de pedidos.
