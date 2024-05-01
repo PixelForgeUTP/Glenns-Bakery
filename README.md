@@ -17,3 +17,7 @@ ejemplo: [menu.component.ts](https://github.com/PixelForgeUTP/Glenns-Bakery/blob
 Atributo: Uso del atributo dentro de la etiqueta [routerLink]="['/home']
 
 ![image](https://github.com/PixelForgeUTP/Glenns-Bakery/assets/93150198/337b8236-4cd0-470d-b1c3-18e09295e51d)
+
+# Glenn's Bakery Description
+## Barra de navegación
+###Función:
