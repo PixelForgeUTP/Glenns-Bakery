@@ -11,10 +11,7 @@ import { CustomInputComponent } from "../components/custom-input/custom-input.co
   templateUrl: './auth.page.html',
   styleUrls: ['./auth.page.scss'],
   standalone: true,
-  imports: [
-    IonInput, 
-    IonList, 
-    IonContent, 
+  imports: [IonInput, IonList, IonContent, 
     IonHeader, 
     IonTitle, 
     IonToolbar, 
