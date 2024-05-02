@@ -1,29 +1,27 @@
 <app-menu></app-menu>
-<div class="ion-page" id="main-content">
-  <div class="login-content"></div>
-  <ion-content>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formControl">
-      <app-custom-input
-      [control]="loginForm.controls.email"
-      label="Email"
-      type="email"
-      autocomplete="email"
-    ></app-custom-input>
-
+<div class="login-content"></div>
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formControl">
     <app-custom-input
-      [control]="loginForm.controls.password"
-      label="Password"
-      type="password"
-      autocomplete="Password"
-    ></app-custom-input>
+    [control]="loginForm.controls.email"
+    label="Email"
+    type="email"
+    autocomplete="email"
+  ></app-custom-input>
 
-    <ion-button
-      expand="block"
-      type="submit"
-      [disabled]="!loginForm.valid"
-      >
-      Click me
-    </ion-button>
-    </form>
-  </ion-content>
-</div>
+  <app-custom-input
+    [control]="loginForm.controls.password"
+    label="Password"
+    type="password"
+    autocomplete="Password"
+  ></app-custom-input>
+
+  <ion-button
+    expand="block"
+    type="submit"
+    [disabled]="!loginForm.valid"
+    >
+    Click me
+  </ion-button>
+  </form>
+</ion-content>
