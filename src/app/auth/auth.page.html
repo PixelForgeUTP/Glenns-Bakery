@@ -11,7 +11,7 @@
           <ion-label>Explore</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label><a href="./profile">Profile</a></ion-label>
+          <ion-label><a [routerLink]="['/Profile']">Profile</a></ion-label>
         </ion-item>
       </ion-list>
       <!-- List of menu items -->
@@ -49,7 +49,7 @@
       type="submit"
       [disabled]="!loginForm.valid"
       >
-      Click me
+      Iniciar Sesión
     </ion-button>
     </form>
   </ion-content>
