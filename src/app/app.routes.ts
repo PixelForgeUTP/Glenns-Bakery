@@ -16,16 +16,16 @@ export const routes: Routes = [
   },
   {
     path: 'auth-sign-up',
-    loadComponent: () => import('./auth-sign-up/auth-sign-up.page').then( m => m.AuthSignUpPage)
+    loadComponent: () => import('./pages/auth-sign-up/auth-sign-up.page').then( m => m.AuthSignUpPage)
   },
   {
     path: 'auth-options',
-    loadComponent: () => import('./auth-options/auth-options.page').then( m => m.AuthOptionsPage)
+    loadComponent: () => import('./pages/auth-options/auth-options.page').then( m => m.AuthOptionsPage)
   },
 
   {
     path: 'profile',
-    loadComponent: () => import('./profile/profile.page').then( m => m.ProfilePage)
+    loadComponent: () => import('./pages/profile/profile.page').then( m => m.ProfilePage)
   }
 
 ];
