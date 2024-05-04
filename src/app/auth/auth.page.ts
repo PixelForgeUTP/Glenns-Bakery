@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { FormsModule, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { 
   IonContent, 
@@ -18,20 +18,27 @@ import {
   IonInput
 } from '@ionic/angular/standalone';
 
-import { CustomInputComponent } from "../../components/custom-input/custom-input.component";
-import { MenuComponent } from 'src/app/components/menu/menu.component';
+import { CustomInputComponent } from "../components/custom-input/custom-input.component";
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.page.html',
   styleUrls: ['./auth.page.scss'],
   standalone: true,
   imports: [
-    IonButton,
-    IonContent,
-    
-    MenuComponent,
+    IonInput, 
+    IonList, 
+    IonContent, 
+    IonHeader, 
+    IonTitle, 
+    IonToolbar, 
     CommonModule, 
     FormsModule,
+    IonButtons,
+    IonMenuButton,
+    IonItem,
+    IonLabel,
+    IonMenu,
+    IonButton,
     RouterLink,
     CustomInputComponent,
     ReactiveFormsModule
