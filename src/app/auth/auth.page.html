@@ -1,0 +1,51 @@
+<ion-header class="custom-header">
+  <ion-toolbar color="custom" class="custom-toolbar">
+    <div class="button-container1">
+      <ion-button (click)="goBack()" style="--background: none; --color: transparent; --border: none; padding: 0;">
+        <img class="custom-img" src="assets\icon\arrow-left (2).png" alt="Botón de Atrás" >
+      </ion-button>  
+      <ion-title class="custom-title">
+        <a style="color: white;" routerLink="/home">Ahora no</a>
+      </ion-title>
+    </div>
+    <div class="image-container">
+      <img class="custom-image" src="assets\icon\bd21b236-78cc-4cbd-9687-75c38a582c5f.png" alt="Glen's Bakery">
+    </div>  
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content>
+    <ion-title style="font-size: 25px;" class="custom-title2">Iniciar sesión</ion-title>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formControl">
+      <app-custom-input
+      [control]="loginForm.controls.email"
+      label="Email"
+      type="email"
+      autocomplete="email"
+    ></app-custom-input>
+
+    <app-custom-input
+      [control]="loginForm.controls.password"
+      label="Password"
+      type="password"
+      autocomplete="Password"
+    ></app-custom-input>
+    
+    <div class="button-container">
+    <ion-button
+      expand="block"
+      type="submit"
+      [disabled]="!loginForm.valid"
+      >
+      Iniciar Sesión
+    </ion-button>
+    </div>
+    </form>
+    
+    <div class="custom-title2">
+    <span>¿No estas registrado? 
+      <a routerLink="/auth-sign-up">Registrate</a></span>
+    </div>
+
+  </ion-content>
+

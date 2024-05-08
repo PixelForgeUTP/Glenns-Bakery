@@ -1,14 +1,14 @@
 import { IonButton } from '@ionic/angular/standalone';
 import { Component, Input, inject } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 export type Provider = 'google' | 'facebook';
 
 @Component({
   standalone: true,
-  imports: [NgOptimizedImage, IonButton] ,
+  imports: [NgOptimizedImage, IonButton, RouterLink] ,
   selector: 'app-button-providers',
   templateUrl: './button-providers.component.html',
   styleUrls: ['./button-providers.component.scss'],
