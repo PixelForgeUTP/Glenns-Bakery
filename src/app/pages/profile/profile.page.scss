@@ -1,0 +1,14 @@
+.menu{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+
+}
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+ion-button {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
