@@ -1,9 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>auth-options</ion-title>
+<ion-header class="custom-header">
+  <ion-toolbar color="custom"  class="custom-toolbar">
+    <ion-title class="custom-title">
+      <a style="color: white;" routerLink="/home">Ahora no</a>
+    </ion-title>
+    <div class="image-container">
+      <img class="custom-image" src="assets\icon\bd21b236-78cc-4cbd-9687-75c38a582c5f.png" alt="Glen's Bakery">
+    </div>    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-button-providers [isLogin]="true" ></app-button-providers>
+  <ion-title style="font-size: 26px;" class="custom-title2">Elige como quieres iniciar</ion-title>
+  <app-button-providers [isLogin]="true"></app-button-providers>
+  <div class="bottom-link">
+    <ion-title class="custom-title2">
+      <a routerLink="/auth-sign-up">Registrarse</a>
+    </ion-title>
+  </div>
+  
 </ion-content>

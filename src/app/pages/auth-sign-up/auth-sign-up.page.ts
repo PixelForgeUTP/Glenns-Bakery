@@ -1,8 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { FormControl, FormGroup, FormsModule, Validators, ReactiveFormsModule} from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { 
+  CommonModule, 
+  Location 
+} from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
+import { 
+  FormControl, 
+  FormGroup, 
+  FormsModule, 
+  Validators, 
+  ReactiveFormsModule
+} from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 import { 
   IonContent, 
   IonHeader, 
@@ -10,7 +19,7 @@ import {
   IonToolbar, 
   IonButton } from '@ionic/angular/standalone';
 
-import { CustomInputComponent } from "../../components/custom-input/custom-input.component";
+import { CustomInputComponent } from 'src/app/components/custom-input/custom-input.component';
 
 @Component({
   selector: 'app-auth-sign-up',
@@ -25,6 +34,7 @@ import { CustomInputComponent } from "../../components/custom-input/custom-input
     IonToolbar, 
     CommonModule, 
     FormsModule,
+    RouterLink,
     ReactiveFormsModule,
     CustomInputComponent
   ]
@@ -37,7 +47,10 @@ export class AuthSignUpPage implements OnInit {
   });
 
   
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService, 
+    private router: Router, 
+    private location: Location) { }
 
   onSubmit() {
     console.log('Form Submitted', this.registerForm.value);
@@ -64,7 +77,9 @@ export class AuthSignUpPage implements OnInit {
     }
   }
   
-
+  goBack() {
+    this.location.back();
+  }
 
  ngOnInit(): void {
    
