@@ -11,7 +11,7 @@ import {
   Validators, 
   ReactiveFormsModule
 } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../services/auth.service';
 import { 
   IonContent, 
   IonHeader, 
@@ -19,7 +19,7 @@ import {
   IonToolbar, 
   IonButton } from '@ionic/angular/standalone';
 
-import { CustomInputComponent } from "../../components/custom-input/custom-input.component";
+import { CustomInputComponent } from "../components/custom-input/custom-input.component";
 
 @Component({
   selector: 'app-auth-sign-up',

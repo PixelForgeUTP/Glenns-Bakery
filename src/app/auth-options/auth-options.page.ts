@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton } from '@ionic/angular/standalone';
-import { ButtonProvidersComponent } from '../../components/button-providers/button-providers.component';
+import { ButtonProvidersComponent } from '../components/button-providers/button-providers.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
