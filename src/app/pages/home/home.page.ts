@@ -8,7 +8,8 @@ import { MenuComponent } from 'src/app/components/menu/menu.component';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, 
+  imports: [
+    IonHeader, 
     IonToolbar, 
     IonTitle, 
     IonContent,
