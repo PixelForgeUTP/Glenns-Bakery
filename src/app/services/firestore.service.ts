@@ -15,7 +15,7 @@ export class FirestoreService {
 
   getProducts(){
     const productsReference = collection(this.fireStore, 'products')
-    return collectionData(productsReference);
+    return collectionData(productsReference, {idField: 'id'});
   }
 
   getProductById(id: string){

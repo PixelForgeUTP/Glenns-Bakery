@@ -1,5 +1,7 @@
-<div class="cards-container">
-  <ion-card *ngFor="let product of products$ | async">
+<ion-content>
+  <div class="card-container">
+  <app-menu></app-menu>
+  <ion-card *ngFor="let product of cartProducts$ | async">
     <div class="card-image">
       <img [src]="product.image" alt="{{ product.name }}">
     </div>
@@ -10,6 +12,8 @@
     <ion-card-content>
       Type: {{ product.type }}
     </ion-card-content>
-    <ion-button (click)="addToCart(product)">Add to Cart</ion-button>
   </ion-card>
 </div>
+</ion-content>
+
+

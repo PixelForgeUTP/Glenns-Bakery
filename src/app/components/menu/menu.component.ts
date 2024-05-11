@@ -6,6 +6,7 @@ import {
   IonMenuButton, IonList, IonItem, 
   IonLabel, IonButton 
 } from '@ionic/angular/standalone';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-menu',
@@ -30,8 +31,13 @@ import {
 })
 export class MenuComponent  implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {}
+  constructor(private menu: MenuController) { }
+  
+  openMenu() {
+    this.menu.open('main-menu');
+  }
+  ngOnInit() {
+    return 0;
+  }
 
 }
