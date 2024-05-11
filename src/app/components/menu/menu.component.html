@@ -5,13 +5,16 @@
       <!-- List of menu items -->
       <ion-list>
         <ion-item>
-          <ion-label [routerLink]="['/home']">Home</ion-label>
+          <ion-label routerLink="/home">Home</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label [routerLink]="['/auth']">Explore</ion-label>
+          <ion-label routerLink="/auth">Explore</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label [routerLink]="['/profile']">Profile</ion-label>
+          <ion-label routerLink="/profile">Profile</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label [routerLink]="['/shoppin-cart']">Shopping Cart</ion-label>
         </ion-item>
       </ion-list>
       <!-- List of menu items -->
@@ -22,10 +25,12 @@
 <div class="ion-page" id="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-buttons slot="start">
+      <ion-buttons class="line-bar" slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>Menu</ion-title>
+      <ion-title>
+        <img class="logo" src="https://raw.githubusercontent.com/PixelForgeUTP/source/455c6c3173b965ca9a127e5ac0c61ec5e6559406/Figma%20packs/Logos/Logo.svg" alt="Glenn's Logo" />
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 </div>
