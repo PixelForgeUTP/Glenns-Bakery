@@ -31,7 +31,7 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password); // returns a promise
   }
 
-  logout() {
+  logOut() {
     return signOut(this.auth); // returns a promise
   }
 
@@ -52,8 +52,7 @@ export class AuthService {
   async callPopUp (provider: AuthProvider): Promise<UserCredential> {
     try{
       const result = await signInWithPopup(this.auth, provider)
-
-      return this.callPopUp(provider)
+      return result;
     } catch (error: any){
       return error;
     }

@@ -30,7 +30,7 @@ export class ButtonProvidersComponent   {
   async signUpWithGoogle(): Promise <void> {
     try{
       const result = await this._authService.signInWithGoogleProvider();
-      this._router.navigateByUrl('/');
+      this._router.navigate(['/home']);
       console.log(result)
     }catch (error) {
       console.log(error);

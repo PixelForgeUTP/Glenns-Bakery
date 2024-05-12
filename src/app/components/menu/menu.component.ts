@@ -1,10 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit,} from '@angular/core';
+import { RouterLink,} from '@angular/router';
 import { 
-  IonTitle, IonToolbar, IonHeader, 
-  IonMenu, IonContent, IonButtons, 
-  IonMenuButton, IonList, IonItem, 
-  IonLabel, IonButton 
+  IonTitle, 
+  IonToolbar, 
+  IonHeader, 
+  IonMenu, 
+  IonContent, 
+  IonButtons, 
+  IonMenuButton, 
+  IonList, 
+  IonItem, 
+  IonLabel, 
+  IonButton, 
 } from '@ionic/angular/standalone';
 import { MenuController } from '@ionic/angular';
 
@@ -25,7 +32,6 @@ import { MenuController } from '@ionic/angular';
     IonItem, 
     IonLabel, 
     IonButton,
-
     RouterLink
   ]
 })

@@ -1,34 +1,39 @@
-.formControl {
-    margin: 0 auto; 
-    margin-bottom: 20px;
-    width: 350px;
-}
-
 .custom-header{
     height: 50%;
-  }
-  
+}
+
 .custom-toolbar{
     height: 100%;
     background-color: #774936;
 }
-  
+
+.button-container1 {
+    display: flex;
+    align-items: center;
+}
+
+ion-button.custom-back{
+    --background: none;
+    --color: transparent;
+    --border: none;
+    --padding: 0;
+}
+
+.custom-img{
+    height: 20px;
+    width: 20px;
+}
+
 .custom-title{
     text-align: right; 
     text-decoration: underline;
     font-size: 16px;
-    margin-top: 10px;
-}
-
-.custom-title2 {
-    color: #774936;
-    text-align: center;
-    margin-bottom: 20px;
 
     a{
-        color: #774936;
+        color: white;
     }
 }
+
 
 .image-container {
     display: flex;
@@ -36,19 +41,21 @@
     align-items: center; 
 }
 
-.button-container1 {
-    display: flex;
-    align-items: center;
-}
-  
-.custom-img{
-    height: 20px;
-    width: 20px;
-}
-
 .custom-image {
     height: 300px;
     margin-top: -40px; 
+}
+
+.custom-title2 {
+    color: #774936;
+    text-align: center;
+    font-size: 25px;
+}
+
+.formControl {
+    margin: 0 auto; 
+    margin-bottom: 20px;
+    width: 350px;
 }
 
 .button-container {
@@ -69,12 +76,15 @@ ion-button {
     --border-color: #774936;
     --border-style: solid;
     --border-width: 1px;
-  
-    --box-shadow: 0 2px 6px 0 #774936;
-  
-    --ripple-color: #774936;
-  
-    --padding-top: 10px;
-    --padding-bottom: 10px;
 
+}
+
+.custom-title3 {
+    color: #774936;
+    text-align: center;
+    margin-bottom: 20px;
+
+    a{
+        color: #4d2f23;
+    }
 }
