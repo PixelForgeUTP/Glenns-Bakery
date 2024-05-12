@@ -1,11 +1,11 @@
 <ion-header class="custom-header">
   <ion-toolbar color="custom" class="custom-toolbar">
     <div class="button-container1">
-      <ion-button (click)="goBack()" style="--background: none; --color: transparent; --border: none; padding: 0;">
+      <ion-button (click)="goBack()" class="custom-back" >
         <img class="custom-img" src="assets\icon\arrow-left (2).png" alt="Botón de Atrás" >
       </ion-button>  
       <ion-title class="custom-title">
-        <a style="color: white;" routerLink="/home">Ahora no</a>
+        <a routerLink="/home">Ahora no</a>
       </ion-title>
     </div>
     <div class="image-container">
@@ -15,7 +15,7 @@
 </ion-header>
 
   <ion-content>
-    <ion-title style="font-size: 25px;" class="custom-title2">Iniciar sesión</ion-title>
+    <ion-title class="custom-title2">Iniciar sesión</ion-title>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formControl">
       <app-custom-input
       [control]="loginForm.controls.email"
@@ -42,7 +42,7 @@
     </div>
     </form>
     
-    <div class="custom-title2">
+    <div class="custom-title3">
     <span>¿No estas registrado? 
       <a routerLink="/auth-sign-up">Registrate</a></span>
     </div>

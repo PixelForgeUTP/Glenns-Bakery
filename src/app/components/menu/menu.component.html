@@ -1,20 +1,20 @@
-<ion-menu contentId="main-content">
+<ion-menu  contentId="main-content">
   <ion-header>
     <ion-toolbar>
       <ion-title class="menu">Menu</ion-title>
       <!-- List of menu items -->
       <ion-list>
         <ion-item>
-          <ion-label routerLink="/home">Home</ion-label>
+          <a routerLink="/home">Home</a>
         </ion-item>
         <ion-item>
-          <ion-label routerLink="/auth">Explore</ion-label>
+          <a routerLink="/auth">Explore</a>
         </ion-item>
         <ion-item>
-          <ion-label routerLink="/profile">Profile</ion-label>
+          <a routerLink="/profile">Profile</a>
         </ion-item>
         <ion-item>
-          <ion-label [routerLink]="['/shoppin-cart']">Shopping Cart</ion-label>
+          <a [routerLink]="['/shoppin-cart']">Shopping Cart</a>
         </ion-item>
       </ion-list>
       <!-- List of menu items -->

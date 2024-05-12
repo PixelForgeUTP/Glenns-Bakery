@@ -1,11 +1,11 @@
 <ion-header class="custom-header">
   <ion-toolbar color="custom" class="custom-toolbar">
     <div class="button-container1">
-      <ion-button (click)="goBack()" style="--background: none; --color: transparent; --border: none; padding: 0;">
+      <ion-button (click)="goBack()" class="custom-back">
         <img class="custom-img" src="assets\icon\arrow-left (2).png" alt="Botón de Atrás" >
       </ion-button>  
       <ion-title class="custom-title">
-        <a style="color: white;" routerLink="/home">Ahora no</a>
+        <a routerLink="/home">Ahora no</a>
       </ion-title>
     </div>
     <div class="image-container">
@@ -44,7 +44,7 @@
     </div>
   </form>
   
-  <div class="custom-title2">
+  <div class="custom-title3">
   <span class="small-text log-in-redirect">¿Ya tienes una cuenta? 
     <a routerLink="/auth">Iniciar sesión</a></span>
   </div>

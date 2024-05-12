@@ -42,7 +42,8 @@ import { AuthService } from 'src/app/services/auth.service';
     IonToolbar, 
     CommonModule, 
     FormsModule, 
-    IonMenuButton]
+    IonMenuButton,
+  ]
 })
 export class ProfilePage {
 
@@ -56,6 +57,10 @@ export class ProfilePage {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  history() {
+    this._router.navigate(['/shopping-history'])
   }
 
 }
