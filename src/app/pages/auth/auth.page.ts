@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { FormsModule, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { MatSnackBar, MatSnackBarModule, MatSnackBarRef } from '@angular/material/snack-bar';
 import { Router, RouterLink } from '@angular/router';
 import { 
   IonContent, 
@@ -41,10 +42,13 @@ import { CustomInputComponent } from 'src/app/components/custom-input/custom-inp
     IonButton,
     RouterLink,
     CustomInputComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ]
 })
 export class AuthPage implements OnInit {
+
+  private _snackBar = inject(MatSnackBar);
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -69,8 +73,11 @@ export class AuthPage implements OnInit {
       this.authService.login(email, password)
         .then(result => {
           console.log("You are successfully logged in!", result);
+          const snackBarRef = this.openSnackBar();
           // Navigate to the desired route upon successful login
-          this.router.navigate(['/home']);
+          snackBarRef.afterDismissed().subscribe(() => {
+            this.router.navigate(['/home'])
+          })
         })
         .catch(error => {
           console.error("Error logging in: ", error);
@@ -84,6 +91,14 @@ export class AuthPage implements OnInit {
         control?.markAsTouched({ onlySelf: true });
       });
     }
+  }
+
+  openSnackBar() {
+    return this._snackBar.open('Ha ingresado correctamente', 'Close', {
+      duration: 2500,
+      verticalPosition: 'top',
+      horizontalPosition: 'center'
+    });
   }
 
   goBack() {

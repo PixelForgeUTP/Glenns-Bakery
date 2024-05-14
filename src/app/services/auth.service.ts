@@ -23,16 +23,12 @@ export class AuthService {
     return createUserWithEmailAndPassword(this.auth, email, password);
   }
 
-  loginWithGoogle() {
-    return
-  }
-
   login(email: string, password: string) {
     return signInWithEmailAndPassword(this.auth, email, password); // returns a promise
   }
 
-  logOut() {
-    return signOut(this.auth); // returns a promise
+  logOut(): Promise<void> {
+    return this.auth.signOut(); // returns a promise
   }
 
   //providers
