@@ -7,7 +7,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'starting-screen',
+    redirectTo: 'shoppin-cart',
     pathMatch: 'full',
   },
   {

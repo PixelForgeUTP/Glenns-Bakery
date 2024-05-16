@@ -1,6 +1,17 @@
 <ion-content [fullscreen]="true">
   <app-menu></app-menu>
   <div class="container" id="container">
-    <app-item-explorer class="content"></app-item-explorer>
+    <div class="search-bar">
+      <app-search-bar label="Buscar..."></app-search-bar>
+    </div>
+      <app-custom-input></app-custom-input>
+      <h1>Productos mas Vendidos</h1>
+      <app-item-explorer class="content"></app-item-explorer>
+      
+      <h1>Budines</h1>
+      <app-item-explorer class="content"></app-item-explorer>
+      
+      <h1>Pasteles</h1>
+      <app-item-explorer class="content"></app-item-explorer>
   </div>
 </ion-content>

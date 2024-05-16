@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { CustomInputComponent } from 'src/app/components/custom-input/custom-input.component';
+import { FormControl } from '@angular/forms';
 
 import { ItemExplorerComponent } from 'src/app/components/item-explorer/item-explorer.component';
 import { MenuComponent } from 'src/app/components/menu/menu.component';
+import { SearchBarComponent } from 'src/app/components/search-bar/search-bar.component';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -14,8 +18,11 @@ import { MenuComponent } from 'src/app/components/menu/menu.component';
     IonTitle, 
     IonContent,
     ItemExplorerComponent, 
-    MenuComponent],
+    MenuComponent,
+    SearchBarComponent,
+    CustomInputComponent
+  ],
 })
 export class HomePage {
-  constructor() {}
+  
 }
