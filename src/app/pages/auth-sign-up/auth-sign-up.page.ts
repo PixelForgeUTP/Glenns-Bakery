@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { 
   CommonModule, 
   Location 
 } from '@angular/common';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Router, RouterLink } from '@angular/router';
 import { 
   FormControl, 
@@ -36,10 +37,13 @@ import { CustomInputComponent } from 'src/app/components/custom-input/custom-inp
     FormsModule,
     RouterLink,
     ReactiveFormsModule,
-    CustomInputComponent
+    CustomInputComponent,
+    MatSnackBarModule
   ]
 })
 export class AuthSignUpPage implements OnInit {
+
+  private _snackBar = inject(MatSnackBar);
 
   registerForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -60,8 +64,11 @@ export class AuthSignUpPage implements OnInit {
       this.authService.register(email, password)
         .then(result => {
           console.log("You are successfully registered!", result);
+          const snackBarRef = this.openSnackBar();
           // Navigate to the desired route upon successful registration
-          this.router.navigate(['/auth']); 
+          snackBarRef.afterDismissed().subscribe(() => {
+            this.router.navigate(['/auth']);
+          });
         })
         .catch(error => {
           console.error("Error registering: ", error);
@@ -75,6 +82,14 @@ export class AuthSignUpPage implements OnInit {
         control?.markAsTouched({ onlySelf: true });
       });
     }
+  }
+
+  openSnackBar() {
+    return this._snackBar.open('Se ha registrado correctamente', 'Close', {
+      duration: 2500,
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    })
   }
   
   goBack() {

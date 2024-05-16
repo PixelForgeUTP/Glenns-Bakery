@@ -1,0 +1,36 @@
+.custom-header{
+    height: 100%;
+}
+
+.custom-toolbar{
+    height: 100%;
+    background-color: #774936;
+}
+
+.container-img{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.custom-img{
+    height: 450px;
+    width: 450px;
+}
+
+ion-button {
+    --background: #FFF3D9;
+    --background-hover: #FFF3D9;
+    --background-activated: #FFF3D9;
+    --background-focused: #FFF3D9;
+    --color: #774936;
+    --border-radius: 10px;
+    font-size: 30px;
+    height: 50px;
+    width: 250px;
+}
+
+.button-container{
+    text-align: center;
+    margin-top: 200px;
+}
