@@ -4,11 +4,36 @@
   padding: 30px;
 
 }
+
 ion-menu-button {
   color: var(--ion-color-primary);
+  
 }
 ion-button {
+  --background:#774936 ; 
+  --color: #ffffff; 
   display: flex;
   justify-content: center;
   padding: 10px;
+  --border: #774936; 
+  --border-color: #774936;
+
+}
+
+h1,
+h2,
+p{
+border:#774936;
+  color: #774936;
+}
+
+ 
+.img-pedidos,
+.img-direcciones,
+.img-soporte {
+  color: #ffffff; 
+  margin-right: 15px; 
+}
+.img-cupon{
+  margin-right: 30px; 
 }
