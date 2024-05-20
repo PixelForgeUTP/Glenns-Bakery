@@ -2,18 +2,23 @@
     margin-top: 100px;
 }
 .card-container{
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
+    color: #774936;
 }
+
 
 ion-card {
     width: 200px;
     min-width: 200px;
     margin-right: 10px;
     flex-shrink: 0;
+    color: #774936;
 }
+
 
 .card-image {
     height: 150px;
@@ -32,6 +37,11 @@ img {
     align-items: center;
     margin: auto;
 }
+
+.product-name,
+.product-price {
+    color: #774936;
+ }
 
 .shoppin-title{
     display: flex;
