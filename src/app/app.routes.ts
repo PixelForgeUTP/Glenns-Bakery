@@ -38,7 +38,15 @@ export const routes: Routes = [
   {
     path: 'starting-screen',
     loadComponent: () => import('./pages/starting-screen/starting-screen.page').then( m => m.StartingScreenPage)
+  },  {
+    path: 'address',
+    loadComponent: () => import('./pages/address/address.page').then( m => m.AddressPage)
+  },
+  {
+    path: 'address-add',
+    loadComponent: () => import('./pages/address-add/address-add.page').then( m => m.AddressAddPage)
   }
+
 
 
 ];
