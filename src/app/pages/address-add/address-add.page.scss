@@ -1,0 +1,25 @@
+.container{
+    margin-top: 80px;
+}
+
+.formControl {
+    margin: 0 auto; 
+    margin-bottom: 20px;
+    width: 350px;
+}
+
+ion-button {
+    --background: #ffffff;
+    --background-hover: #ffffff;
+    --background-activated: #ffffff;
+    --background-focused: #ffffff;
+  
+    --color: #774936;
+  
+    --border-radius: 10px;
+    --border-color: #774936;
+    --border-style: solid;
+    --border-width: 1px;
+
+    margin-top: 10px;
+}

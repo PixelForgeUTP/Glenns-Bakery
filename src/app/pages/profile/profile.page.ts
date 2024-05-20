@@ -77,4 +77,8 @@ export class ProfilePage {
     this._router.navigate(['/shopping-history'])
   }
 
+  address() {
+    this._router.navigate(['/address'])
+  }
+
 }
