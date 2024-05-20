@@ -1,6 +1,5 @@
 # Glenn's Bakery
 
-[place holder].
 
 ## Descripcion de componentes
 ![image](https://github.com/PixelForgeUTP/Glenns-Bakery/assets/93150198/0cc64894-37da-4e15-b6b1-1277e9f3526c)
