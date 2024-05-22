@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { 
   IonContent, 
   IonHeader, 
@@ -21,6 +21,7 @@ import {
 
 import { MenuComponent } from '../../components/menu/menu.component';
 import { AuthService } from 'src/app/services/auth.service';
+import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -52,6 +53,20 @@ export class ProfilePage {
   private authservice = inject(AuthService);
   private _router = inject(Router);
   private _snackBar = inject(MatSnackBar);
+  private profileService = inject(ProfileService);
+  
+  profileData: any = {};
+
+  async loadUserProfile() {
+    try {
+      const profileData = await this.profileService.getUserProfile();
+      if (profileData) {
+        this.profileData = profileData;
+      }
+    } catch (error) {
+      console.error('Error loading profile data:', error);
+    }
+  }
 
   async logOut(): Promise<void> {
     try {
@@ -77,4 +92,11 @@ export class ProfilePage {
     this._router.navigate(['/shopping-history'])
   }
 
+  address() {
+    this._router.navigate(['/address'])
+  }
+
+  fill() {
+    this._router.navigate(['/fill-profile'])
+  }
 }

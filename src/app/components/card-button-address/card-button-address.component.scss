@@ -1,0 +1,68 @@
+.custom-card{
+    border-radius: 15px;
+    border: 2px solid #774936;
+    width: 90%;
+    margin: 0 auto; 
+    margin-top: 10px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+}
+
+.card-image {
+    margin-right: 10px; 
+    width: 40px; 
+    height: auto;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+ion-button{
+    --background: none;
+    --color: transparent;
+    --border: none;
+    --padding: 0;
+    --box-shadow: none;
+
+    width: 60px;
+    height: 60px;
+
+    img{
+        width: 50px;
+    }
+}
+
+.action-button {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Ajusta la distancia del borde derecho */
+    transform: translateY(-50%);
+}
+
+ion-button.custom-button {
+    --background: #ffffff;
+    --background-hover: #ffffff;
+    --background-activated: #ffffff;
+    --background-focused: #ffffff;
+  
+    --color: #774936;
+  
+    --border-radius: 10px;
+    --border-color: #774936;
+    --border-style: solid;
+    --border-width: 2px;
+    --box-shadow: 0 2px 6px 0 #774936;
+
+    width: 90%;
+    margin: 0 auto; 
+    margin-top: 10px;
+
+    img{
+        width: 50px;
+    }
+}

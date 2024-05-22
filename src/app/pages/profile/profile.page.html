@@ -8,23 +8,23 @@
     <ion-card-content>
       <ion-list lines="none">
         <ion-item>
-          <ion-avatar slot="start">
+          <ion-avatar routerLinkActive="router-link-active" slot="start">
             <img src="https://github.com/pixelforgeutp.png"/>
           </ion-avatar>
           <ion-label>
-            <h1>Lee Sang-hyeok</h1>
+            <h1>{{profileData.nombre}}</h1>
             <p>Nombre</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-label>
-            <h2>(507) 6652-9849</h2>
+            <h2>{{profileData.telefono}}</h2>
             <p>Numero de telefono</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-label>
-            <h2>faker&#64;t1.com</h2>
+            <h2>{{profileData.correo}}</h2>
             <p>Correo electronico</p>
           </ion-label>
         </ion-item>
@@ -35,48 +35,47 @@
   <ion-card class="user-options-card">
     <ion-card-content>
       <h2>Servicios</h2>
-        <ion-item>
-          <ion-label>
-           <ion-button (click)="history()"> <img src="assets/icon/pedidos icon White.svg"
-            class="img-pedidos">Tus pedidos</ion-button>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            <ion-button>
-              <img src="assets/icon/Cupon icon white.svg" 
-              class="img-cupon"> Cupones
-            </ion-button>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            <ion-button>
-              <img src="assets/icon/Direction icon white.svg" 
-              class="img-direcciones"> Direcciones
-            </ion-button>
-          </ion-label>
-        </ion-item>
-    </ion-card-content>
-  </ion-card>
-
-<ion-card class="user-services-card">
-  <ion-card-content>
-    <h2>Otros servicios</h2>
       <ion-item>
         <ion-label>
-          <ion-button>
-            <img src="assets/icon/Soporte icon white.svg"
-             class="img-soporte"> Soporte
+          <ion-button (click)="history()">
+            <img src="assets/icon/pedidos icon White.svg" class="img-pedidos">Tus pedidos
           </ion-button>
         </ion-label>
       </ion-item>
       <ion-item>
         <ion-label>
-          <ion-button (click)="logOut()">Cerrar sesión</ion-button>
+          <ion-button>
+            <img src="assets/icon/Cupon icon white.svg" class="img-cupon"> Cupones
+          </ion-button>
         </ion-label>
       </ion-item>
-  </ion-card-content>
-</ion-card>
+      <ion-item>
+        <ion-label>
+          <ion-button (click)="address()">
+            <img src="assets/icon/Direction icon white.svg" class="img-direcciones"> Direcciones
+          </ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card class="user-services-card">
+    <ion-card-content>
+      <h2>Otros servicios</h2>
+      <ion-item>
+        <ion-label>
+          <ion-button (click)="fill()">
+            <img src="assets/icon/Soporte icon white.svg" class="img-soporte"> Soporte
+          </ion-button>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-button (click)="logOut()">
+            <img src="assets/icon/power.png" alt="log-out" class="img-logOut">Cerrar sesión
+          </ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

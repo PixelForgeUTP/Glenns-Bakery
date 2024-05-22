@@ -1,0 +1,24 @@
+<ion-card class="custom-card">
+  <ion-card-header>
+    <div class="card-content">
+      <img src="assets/icon/map-pin.png" alt="map-pin" class="card-image">
+      <div class="card-text">
+        <ion-card-title>Los Valles, Villa Sol</ion-card-title>
+        <ion-card-subtitle>Dolega</ion-card-subtitle>
+      </div>
+    </div>
+    <ion-button id="open-action-sheet" class="action-button">
+      <img src="assets\icon\dots-vertical.png" alt="options">
+    </ion-button>
+    <ion-action-sheet 
+    trigger="open-action-sheet" 
+    header="Actions" 
+    [buttons]="actionSheetButtons"
+    ></ion-action-sheet>
+  </ion-card-header>
+</ion-card>
+
+<ion-button (click)="addAddress()" expand="block" class="custom-button">
+  <img src="assets/icon/plus.png" alt="plus" class="button-icon">
+</ion-button>
+
