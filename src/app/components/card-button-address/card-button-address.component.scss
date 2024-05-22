@@ -4,11 +4,13 @@
     width: 90%;
     margin: 0 auto; 
     margin-top: 10px;
+    
 }
 
 .card-content {
     display: flex;
     align-items: center;
+    
 }
 
 .card-image {
@@ -20,6 +22,16 @@
 .card-text {
     display: flex;
     flex-direction: column;
+    
+}
+
+.addressTitle{
+ color: #774936;
+}
+
+.addressSubtitle{
+
+    color: #774936;
 }
 
 ion-button{
