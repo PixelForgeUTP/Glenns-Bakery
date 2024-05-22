@@ -106,6 +106,7 @@ export class AuthPage implements OnInit {
   }
 
   ngOnInit() {
+    return 0;
   }
 
 }

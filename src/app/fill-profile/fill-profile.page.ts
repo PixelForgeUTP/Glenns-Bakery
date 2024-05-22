@@ -1,7 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+  FormControl
+} from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonButton } from '@ionic/angular/standalone';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { CustomInputComponent } from '../components/custom-input/custom-input.component';
+import { MenuComponent } from '../components/menu/menu.component';
 import { ProfileService } from '../services/profile.service';
 
 @Component({
@@ -10,32 +21,31 @@ import { ProfileService } from '../services/profile.service';
   styleUrls: ['./fill-profile.page.scss'],
   standalone: true,
   imports: [
-    IonButton, 
-    IonLabel, 
-    IonItem, 
-    IonContent, 
-    IonHeader, 
-    IonTitle, 
-    IonToolbar, 
-    CommonModule, 
+    IonButton,
+    CustomInputComponent,
+    IonLabel,
+    IonItem,
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MenuComponent
   ]
 })
 export class FillProfilePage implements OnInit {
+  profileForm = new FormGroup({
+    nombre: new FormControl('', [Validators.required]),
+    apellido: new FormControl('', [Validators.required]),
+    telefono: new FormControl('', [Validators.required]),
+  });
 
-  profileForm: FormGroup;
-
-  constructor(
-    private fb: FormBuilder,
-    private profileService: ProfileService
+  constructor(private profileService: ProfileService,
+    private _snackBar: MatSnackBar
   ) {
-    this.profileForm = this.fb.group({
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
-      correo: [{ value: '', disabled: true }, Validators.required],
-      telefono: ['', Validators.required],
-    });
   }
 
   ngOnInit() {
@@ -43,18 +53,41 @@ export class FillProfilePage implements OnInit {
   }
 
   async loadUserProfile() {
-    const profileData = await this.profileService.getUserProfile();
-    if (profileData) {
-      this.profileForm.patchValue(profileData);
+    const profileData = await this.profileService.getUserProfile().toPromise();
+    console.log('Profile Data:', profileData); // Logging the profile data
+    if (profileData && profileData.length > 0) {
+      const userProfile = profileData[0];
+      this.profileForm.patchValue(userProfile);
+      console.log('Form Value:', this.profileForm.value); // Logging form value after patching
+    } else {
+      console.error('No profile data found or user is not authenticated.');
     }
   }
 
   async onSubmit() {
+    console.log('Form Submitted', this.profileForm.value);
     if (this.profileForm.valid) {
       await this.profileService.updateUserProfile(this.profileForm.value);
-      console.log('Profile updated successfully');
+      this.openSnackBar('Profile updated successfully');
     } else {
-      console.log('Form is not valid');
+      this.checkFormValidity(this.profileForm);
     }
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message, 'Close', {
+      duration: 2500,
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    });
+  }
+
+  checkFormValidity(form: FormGroup) {
+    Object.keys(form.controls).forEach(field => {
+      const control = form.get(field);
+      if (control && control.invalid) {
+        console.log(`Field: ${field}, Errors:`, control.errors);
+      }
+    });
   }
 }
