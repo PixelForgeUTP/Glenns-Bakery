@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, query, where, collectionData, doc, setDoc, addDoc, updateDoc } from '@angular/fire/firestore';
+import { Firestore, collection, query, where, collectionData, doc, setDoc, addDoc, updateDoc, getDocs } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -42,8 +42,16 @@ export class ProfileService {
   async updateUserProfile(updatedData: any) {
     const userUID = localStorage.getItem('userUID');
     if (userUID) {
-      const userProfileRef = doc(this.fireStore, `users/${userUID}`);
-      await updateDoc(userProfileRef, updatedData);
+      const usersReference = collection(this.fireStore, 'users');
+      const userQuery = query(usersReference, where('UID', '==', userUID));
+      const querySnapshot = await getDocs(userQuery);
+
+      if (!querySnapshot.empty) {
+        const userDocRef = querySnapshot.docs[0].ref;
+        await updateDoc(userDocRef, updatedData);
+      } else {
+        console.error('No document to update for UID:', userUID);
+      }
     } else {
       console.error('User UID is not available in localStorage');
     }
