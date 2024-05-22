@@ -1,9 +1,10 @@
 <ion-item>
   <ion-input
-  [type]="text"
+  [type]="type"
   [autocomplete]="autocomplete"
   [placeholder]="label"
   [formControl]="control"
   labelPosition="floating"
 ></ion-input>
+<ion-button *ngIf="togglePassword" (click)="toggleShowPassword()">{{ showPassword ? 'Ocultar' : 'Mostrar' }}</ion-button>
 </ion-item>
