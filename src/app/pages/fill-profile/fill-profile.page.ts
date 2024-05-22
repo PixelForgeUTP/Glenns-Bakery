@@ -11,9 +11,10 @@ import {
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonButton } from '@ionic/angular/standalone';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { CustomInputComponent } from '../components/custom-input/custom-input.component';
-import { MenuComponent } from '../components/menu/menu.component';
-import { ProfileService } from '../services/profile.service';
+import { ProfileService } from 'src/app/services/profile.service';
+import { CustomInputComponent } from 'src/app/components/custom-input/custom-input.component';
+import { MenuComponent } from 'src/app/components/menu/menu.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fill-profile',
@@ -44,9 +45,8 @@ export class FillProfilePage implements OnInit {
   });
 
   constructor(private profileService: ProfileService,
-    private _snackBar: MatSnackBar
-  ) {
-  }
+              private _snackBar: MatSnackBar,
+              private router: Router) {}
 
   ngOnInit() {
     this.loadUserProfile();
@@ -69,6 +69,7 @@ export class FillProfilePage implements OnInit {
     if (this.profileForm.valid) {
       await this.profileService.updateUserProfile(this.profileForm.value);
       this.openSnackBar('Profile updated successfully');
+      this.router.navigate(['/profile']);
     } else {
       this.checkFormValidity(this.profileForm);
     }
