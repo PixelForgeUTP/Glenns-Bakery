@@ -27,15 +27,12 @@ export class ProfileService {
     }
   }
 
-  getUserProfile(): Observable<any> {
+  getUserProfile(): Observable<any[]> {
     const userUID = localStorage.getItem('userUID');
     if (userUID) {
       const usersReference = collection(this.fireStore, 'users');
-      const userQuery = query(
-        usersReference, 
-        where('UID', '==', userUID)
-      );
-      return collectionData(userQuery, { idField: 'id' });
+      const userQuery = query(usersReference, where('UID', '==', userUID));
+      return collectionData(userQuery, { idField: 'id' }) as Observable<any[]>;
     } else {
       console.error('User UID is not available in localStorage');
       return new BehaviorSubject<any[]>([]).asObservable();

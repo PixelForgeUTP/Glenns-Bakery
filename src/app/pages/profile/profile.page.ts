@@ -1,23 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Router, RouterLink } from '@angular/router';
-import { 
-  IonContent, 
-  IonHeader, 
-  IonTitle, 
-  IonToolbar, 
-  IonCard, 
-  IonCardContent, 
-  IonList, 
-  IonAvatar, 
-  IonLabel, 
-  IonItem, 
-  IonButton, 
-  IonButtons, 
-  IonMenuButton
-} from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardContent, IonList, IonAvatar, IonLabel, IonItem, IonButton, IonButtons, IonMenuButton } from '@ionic/angular/standalone';
 
 import { MenuComponent } from '../../components/menu/menu.component';
 import { AuthService } from 'src/app/services/auth.service';
@@ -48,7 +34,7 @@ import { ProfileService } from 'src/app/services/profile.service';
     MatSnackBarModule
   ]
 })
-export class ProfilePage {
+export class ProfilePage implements OnInit {
 
   private authservice = inject(AuthService);
   private _router = inject(Router);
@@ -57,12 +43,19 @@ export class ProfilePage {
   
   profileData: any = {};
 
+  ngOnInit() {
+    this.loadUserProfile();
+  }
+
   async loadUserProfile() {
     try {
-      const profileData = await this.profileService.getUserProfile();
-      if (profileData) {
-        this.profileData = profileData;
-      }
+      this.profileService.getUserProfile().subscribe((profileDataArray) => {
+        if (profileDataArray && profileDataArray.length > 0) {
+          this.profileData = profileDataArray[0];
+        } else {
+          console.error('No profile data found or user is not authenticated.');
+        }
+      });
     } catch (error) {
       console.error('Error loading profile data:', error);
     }
