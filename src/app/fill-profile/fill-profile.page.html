@@ -1,27 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input formControlName="nombre" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Apellido</ion-label>
-      <ion-input formControlName="apellido" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Correo</ion-label>
-      <ion-input formControlName="correo" type="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Teléfono</ion-label>
-      <ion-input formControlName="telefono" type="tel"></ion-input>
-    </ion-item>
+  <app-menu></app-menu>
+  <form class="content" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <app-custom-input
+      [control]="profileForm.controls.nombre"
+      label="Nombre"
+      type="text"
+    ></app-custom-input>
+    <app-custom-input
+      [control]="profileForm.controls.apellido"
+      label="Apellido"
+      type="text"
+    ></app-custom-input>
+    <app-custom-input
+      [control]="profileForm.controls.telefono"
+      label="Teléfono"
+      type="tel"
+    ></app-custom-input>
     <ion-button expand="full" type="submit">Guardar</ion-button>
   </form>
 </ion-content>

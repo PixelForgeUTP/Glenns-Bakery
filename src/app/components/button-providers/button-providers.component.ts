@@ -8,13 +8,13 @@ export type Provider = 'google' | 'facebook';
 
 @Component({
   standalone: true,
-  imports: [NgOptimizedImage, IonButton, RouterLink] ,
+  imports: [NgOptimizedImage, IonButton, RouterLink],
   selector: 'app-button-providers',
   templateUrl: './button-providers.component.html',
   styleUrls: ['./button-providers.component.scss'],
 })
-export class ButtonProvidersComponent   {
-  @Input () isLogin = false;
+export class ButtonProvidersComponent {
+  @Input() isLogin = false;
 
   private _authService = inject(AuthService)
   private _router = inject(Router)
@@ -26,31 +26,30 @@ export class ButtonProvidersComponent   {
       this.signUpWithFacebook();
     }
   }
-  
-  async signUpWithGoogle(): Promise <void> {
-    try{
+
+  async signUpWithGoogle(): Promise<void> {
+    try {
       const result = await this._authService.signInWithGoogleProvider();
-        if(result && result.user){
-          localStorage.setItem('userUID', result.user.uid)
-        }
+      if (result && result.user) {
+        localStorage.setItem('userUID', result.user.uid);
+      }
       this._router.navigate(['/home']);
-      console.log(result)
-    }catch (error) {
+      console.log(result);
+    } catch (error) {
       console.log(error);
     }
   }
 
-  async signUpWithFacebook(): Promise <void> {
-    try{
+  async signUpWithFacebook(): Promise<void> {
+    try {
       const result = await this._authService.signInWithFacebookProvider();
-      if(result && result.user){
-        localStorage.setItem('userUID', result.user.uid)
+      if (result && result.user) {
+        localStorage.setItem('userUID', result.user.uid);
       }
       this._router.navigateByUrl('/');
-      console.log(result)
-    }catch (error) {
+      console.log(result);
+    } catch (error) {
       console.log(error);
     }
   }
-
 }

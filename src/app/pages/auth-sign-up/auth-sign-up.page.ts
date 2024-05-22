@@ -1,24 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { 
-  CommonModule, 
-  Location 
-} from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Router, RouterLink } from '@angular/router';
-import { 
-  FormControl, 
-  FormGroup, 
-  FormsModule, 
-  Validators, 
-  ReactiveFormsModule
-} from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { 
-  IonContent, 
-  IonHeader, 
-  IonTitle, 
-  IonToolbar, 
-  IonButton } from '@ionic/angular/standalone';
+import { ProfileService } from 'src/app/services/profile.service';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton } from '@ionic/angular/standalone';
 
 import { CustomInputComponent } from 'src/app/components/custom-input/custom-input.component';
 
@@ -44,17 +31,18 @@ import { CustomInputComponent } from 'src/app/components/custom-input/custom-inp
 export class AuthSignUpPage implements OnInit {
 
   private _snackBar = inject(MatSnackBar);
+  private profileService = inject(ProfileService);
 
   registerForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required])
   });
 
-  
   constructor(
     private authService: AuthService, 
     private router: Router, 
-    private location: Location) { }
+    private location: Location
+  ) { }
 
   onSubmit() {
     console.log('Form Submitted', this.registerForm.value);
@@ -64,6 +52,13 @@ export class AuthSignUpPage implements OnInit {
       this.authService.register(email, password)
         .then(result => {
           console.log("You are successfully registered!", result);
+          const userUID = result.user.uid;
+          localStorage.setItem('userUID', userUID);
+          localStorage.setItem('Correo', email);
+          
+          // Call addUserProfile with empty values for nombre, apellido, and telefono
+          this.profileService.addUserProfile('', '', '');
+          
           const snackBarRef = this.openSnackBar();
           // Navigate to the desired route upon successful registration
           snackBarRef.afterDismissed().subscribe(() => {
@@ -96,7 +91,7 @@ export class AuthSignUpPage implements OnInit {
     this.location.back();
   }
 
- ngOnInit(): void {
-   
- }
+  ngOnInit() {
+    return 0;
+  }
 }
