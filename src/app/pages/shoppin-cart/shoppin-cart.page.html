@@ -3,9 +3,9 @@
   <app-menu></app-menu>
   <div class="shoppin-content">
     <div class="shoppin-title">
-      <img src="https://raw.githubusercontent.com/PixelForgeUTP/source/976a43d7ce3368d8e4605b077e16e114e0f76f6b/Figma%20packs/Icons/Bolsa%20compra.svg">
+      <img class="bolsa" src="https://raw.githubusercontent.com/PixelForgeUTP/source/976a43d7ce3368d8e4605b077e16e114e0f76f6b/Figma%20packs/Icons/Bolsa%20compra.svg">
       <div class="shoppin-text">
-        <h1>Esta es tu carrito</h1>
+        <h1>Esta es tu bolsa</h1>
       </div>
     </div>
     <img class="shoppin-line" src="https://raw.githubusercontent.com/PixelForgeUTP/source/976a43d7ce3368d8e4605b077e16e114e0f76f6b/Figma%20packs/Icons/Line%20bajo%20bolsa%20de%20compra.svg">
@@ -40,7 +40,7 @@
         Type: {{ product.type }}
       </ion-card-content>
       <ion-card-content class="removeButton">
-        <ion-button (click)="removeItem(product.id)" color="danger" fill="clear">
+        <ion-button class="delete" (click)="removeItem(product.id)" color="danger" fill="clear">
           Remove Item!
         </ion-button>
       </ion-card-content>

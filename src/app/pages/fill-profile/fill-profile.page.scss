@@ -1,3 +1,35 @@
-.content{
+ion-item,
+ion-title,
+ion-label {
+    --color: #774936;
+    margin-top: 20px;
+}
+
+form{
+
+    margin-top: 30px;
+    
+}
+
+
+
+.button{
+    --background: #774936;
     margin-top: 50px;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; 
+  }
+  
+  .imgEmail {
+    max-width: 100%;
+    height: auto;
+    width: 250px;
+    margin-right: 40px;
+  }
+
+ 

@@ -1,21 +1,27 @@
 <ion-content>
   <app-menu></app-menu>
+  <div class="image-container">
+    <img src="assets/icon/Email icon.svg" class="imgEmail">
+  </div>
   <form class="content" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <app-custom-input
+    <app-custom-input 
       [control]="profileForm.controls.nombre"
       label="Nombre"
       type="text"
     ></app-custom-input>
-    <app-custom-input
+    <app-custom-input 
       [control]="profileForm.controls.apellido"
       label="Apellido"
       type="text"
     ></app-custom-input>
-    <app-custom-input
+    <app-custom-input 
       [control]="profileForm.controls.telefono"
       label="Teléfono"
       type="tel"
     ></app-custom-input>
-    <ion-button expand="full" type="submit">Guardar</ion-button>
+    <ion-button class="button" expand="full" type="submit">Guardar</ion-button>
   </form>
 </ion-content>
+
+
+
