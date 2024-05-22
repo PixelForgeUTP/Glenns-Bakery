@@ -1,7 +1,7 @@
 # Welcome to our ***Glenn's Bakery***
 ![image](https://github.com/PixelForgeUTP/Glenns-Bakery/blob/main/src/assets/icon/bd21b236-78cc-4cbd-9687-75c38a582c5f.png?raw=true)
 ## Tabla de contenidos
-- [Descripcion e introduccion](##Descripcion-e-introduccion-al-proyecto-Glenn's-Bakery)
+- [Descripcion e introduccion](##descripcion-e-introduccion-al-proyecto-glenn's-bakery)
 - [Notas tecnicas](##Algunas-notas-tecnicas-de-lo-que-hemos-aprendido...)
 - [Extensiones](###Extensiones)
 - [Componentes](####Uso-de-componentes)
