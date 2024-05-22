@@ -30,6 +30,9 @@ export class ButtonProvidersComponent   {
   async signUpWithGoogle(): Promise <void> {
     try{
       const result = await this._authService.signInWithGoogleProvider();
+        if(result && result.user){
+          localStorage.setItem('userUID', result.user.uid)
+        }
       this._router.navigate(['/home']);
       console.log(result)
     }catch (error) {
@@ -40,6 +43,9 @@ export class ButtonProvidersComponent   {
   async signUpWithFacebook(): Promise <void> {
     try{
       const result = await this._authService.signInWithFacebookProvider();
+      if(result && result.user){
+        localStorage.setItem('userUID', result.user.uid)
+      }
       this._router.navigateByUrl('/');
       console.log(result)
     }catch (error) {

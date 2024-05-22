@@ -7,7 +7,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'shoppin-cart',
+    redirectTo: 'starting-screen',
     pathMatch: 'full',
   },
   {
@@ -38,14 +38,19 @@ export const routes: Routes = [
   {
     path: 'starting-screen',
     loadComponent: () => import('./pages/starting-screen/starting-screen.page').then( m => m.StartingScreenPage)
-  },  {
+  },
+  {
     path: 'address',
     loadComponent: () => import('./pages/address/address.page').then( m => m.AddressPage)
   },
   {
     path: 'address-add',
     loadComponent: () => import('./pages/address-add/address-add.page').then( m => m.AddressAddPage)
+  },  {
+    path: 'fill-profile',
+    loadComponent: () => import('./fill-profile/fill-profile.page').then( m => m.FillProfilePage)
   }
+
 
 
 

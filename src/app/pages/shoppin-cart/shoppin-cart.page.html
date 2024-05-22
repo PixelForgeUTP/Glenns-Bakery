@@ -39,6 +39,11 @@
       <ion-card-content>
         Type: {{ product.type }}
       </ion-card-content>
+      <ion-card-content class="removeButton">
+        <ion-button (click)="removeItem(product.id)" color="danger" fill="clear">
+          Remove Item!
+        </ion-button>
+      </ion-card-content>
     </ion-card>
   </div>
 </div>

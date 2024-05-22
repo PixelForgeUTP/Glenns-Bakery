@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonCard, IonCardTitle, IonCardSubtitle, IonCardContent, IonCardHeader, IonButton } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
 
@@ -25,6 +25,7 @@ import { ShoppingCartService } from '../../services/shopping-cart.service';
 })
 export class ItemExplorerComponent  implements OnInit {
 
+  @Input() productType: string = '';
   constructor(
     private fireStore: FirestoreService,
     private cartService: ShoppingCartService
@@ -33,7 +34,11 @@ export class ItemExplorerComponent  implements OnInit {
   products$: any;
 
   ngOnInit() {
-    this.products$ = this.fireStore.getProducts();
+    if (this.productType) {
+      this.products$ = this.fireStore.getProductsByType(this.productType);
+    } else {
+      this.products$ = this.fireStore.getProducts();
+    }
   }
 
   addToCart(product: any){
