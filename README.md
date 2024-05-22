@@ -35,17 +35,18 @@ Los componentes son piezas reutilizables de codigo que manejan ciertas funcional
 Algunos componentes (destacados) seran mencionados a lo largo de esta documentacion.
 #### Manejo de rutas
 ![image](https://github.com/PixelForgeUTP/Glenns-Bakery/assets/93150198/337b8236-4cd0-470d-b1c3-18e09295e51d)
+
 En la clase de rutas (*src/app/App.routes.ts*) se instancia la ruta de las [Pages](https://github.com/PixelForgeUTP/Glenns-Bakery/blob/main/src/app/app.routes.ts).
 Los modulos se importan en un RouterLink en los componentes (se identifica por su extension .ts). Como ejemplo de esto, puedes ver [menu.component.ts](https://github.com/PixelForgeUTP/Glenns-Bakery/blob/main/src/app/components/menu/menu.component.ts).
 ### Extensiones
 Listado de recursos externos que se utilizaron para facilitar el desarrollo del proyecto.
 
-|                                                                               | Extension     | Descripcion                                                                                         | URL                                                            |
-| ----------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| ![image](https://github.com/pheralb/svgl/blob/main/static/library/figma.svg)  | Figma         | Se utilizo para diseñar las pantallas o paginas del proyecto antes de pasar directamente al codigo. | [Figma](https://www.figma.com/design/r5wckPQRNozsHRSVartGaQ/E-commerce-mobile-app?node-id=10%3A17&t=3Z2dIbHq0xuFZy58-1)                                                      |
-| ![image]()                                                                    | Firebase      | Se utilizo como base de datos.                                                                      | [Firebase](console.firebase.google.com/u)                                                   |
-| ![image](https://github.com/pheralb/svgl/blob/main/static/library/vscode.svg) | VS Code       | Nuestro editor de codigo de confianza.                                                              | [VS Code](https://code.visualstudio.com/)                      |
-|                                                                               | Github - Fork | Lo utilizamos para observar y gestionar la subida del codigo al repositorio en grupo                | [Github](firebase.google.com)<br>[Fork](https://git-fork.com/) |
+| Extension     | Descripcion                                                                                         | URL                                                            |
+| ------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Figma         | Se utilizo para diseñar las pantallas o paginas del proyecto antes de pasar directamente al codigo. | [Figma]()                                                      |
+| Firebase      | Se utilizo como base de datos.                                                                      | [Firebase]()                                                   |
+| VS Code       | Nuestro editor de codigo de confianza.                                                              | [VS Code](https://code.visualstudio.com/)                      |
+| Github - Fork | Lo utilizamos para observar y gestionar la subida del codigo al repositorio en grupo                | [Github](firebase.google.com)<br>[Fork](https://git-fork.com/) |
 
 ## Nuestras paginas en el sitio
 Al entrar en nuestro sitio web, lo primero que veremos sera lo siguiente...
